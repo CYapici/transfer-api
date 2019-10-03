@@ -32,9 +32,9 @@ import static junit.framework.TestCase.assertTrue;
 @ContextConfiguration(classes =
         {DependencyConfiguration.class}, loader = SpringBootContextLoader.class)
 @SpringBootTest
-public class SaveQuoteProcessingStepDefs {
+public class StepDefs {
 
-    @Value("${savequote.baseUrl}")
+    @Value("${stepdefs.baseUrl}")
     private String baseUrl;
 
     @Autowired
