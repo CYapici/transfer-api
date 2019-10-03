@@ -110,8 +110,8 @@ public class StepDefs {
                 .filter(p -> p.getId() == beneficiaryId)
                 .collect(toSingleton()).orElseThrow();
 
-        assertEquals(expectedRemitterBalance.compareTo(actualRemitter.getBalance()) ,0);
-        assertEquals(expectedBeneficiaryBalance.compareTo(actualBeneficiary.getBalance()) ,0);
+        assertEquals(expectedRemitterBalance.compareTo(actualRemitter.getBalance()), 0);
+        assertEquals(expectedBeneficiaryBalance.compareTo(actualBeneficiary.getBalance()), 0);
     }
 
     public static <T> Collector<T, ?, Optional<T>> toSingleton() {

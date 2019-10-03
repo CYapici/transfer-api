@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/Destination/cucumber.json"},
         features = {"src/test/resources/features"},
-        glue = {"rms/aws/cucumber/bdd/testing/stepdefs"},
+        glue = {"com/cy/transferapi/bdd/stepdefs"},
         tags = {"@CurrencyTransfer"})
 @RunWith(Cucumber.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)

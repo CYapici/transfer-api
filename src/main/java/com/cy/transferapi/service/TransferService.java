@@ -19,7 +19,6 @@ public class TransferService {
 
     private IAccountRepository accountRepository;
     private ITransferRepository transferRepository;
- 
 
     @Autowired
     public void setAccountRepository(IAccountRepository accountRepository) {
@@ -47,7 +46,6 @@ public class TransferService {
     public synchronized Transfer transfer(long sourceAccountId, long destinationAccountId, BigDecimal transferAmount)
             throws TransferServiceException {
         try {
-
             if (transferAmount.compareTo(BigDecimal.ZERO) < 0) {
                 throw new TransferServiceException("INVALID TRANSACTION AMOUNT : PLEASE INSERT A POSITIVE OR ZERO VALUE");
             }
@@ -60,10 +58,8 @@ public class TransferService {
             }
 
             destinationAccount.add(transferAmount);
-
             this.accountRepository.save(sourceAccount);
             this.accountRepository.save(destinationAccount);
-
             Transfer transfer = new Transfer(sourceAccount.getId(), destinationAccount.getId(), transferAmount);
             return this.transferRepository.save(transfer);
         } catch (EntityCreationException | NullPointerException e) {

@@ -1,10 +1,8 @@
 package com.cy.transferapi.dto;
 
-
 import java.math.BigDecimal;
 
 public class TransferDto {
-
     private Long sourceId;
     private Long destId;
     private BigDecimal amount;
